@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "@webpack-cli/generators": "^3.0.1"
+  }
+}
