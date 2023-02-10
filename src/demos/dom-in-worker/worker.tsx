@@ -1,5 +1,14 @@
-import React from 'react'
-import { createRoot } from 'react-dom/client'
+/** @jsxImportSource solid-js */
+/** @jsx h */
+
+// import React from 'react'
+// import { createRoot } from 'react-dom/client'
+// import { render } from '../../via/via-dom'
+import { render } from 'solid-js/web'
+import { createSignal } from "solid-js"
+// import * as React from 'solid-js'
+
+/** jsx h */
 
 // import '../../via/dist/controller'
 // import '../../via/controller/object'
@@ -10,8 +19,8 @@ import '../../via/controller/index'
 
 declare global {
     interface Window {
-        audioContext?: AudioContext
-        audioBuffer?: AudioBuffer
+        audioContext: AudioContext
+        audioBuffer: AudioBuffer
     }
 }
 const Via = self.Via
@@ -41,7 +50,7 @@ async function Start() {
     const [docTitle, docUrl, nodeType] = await Promise.all([
         get(document.title),
         get(document.URL),
-        get(document.body.nodeType),
+        get(document.body.nodeType)
     ])
 
     console.log("Document title is: " + docTitle + ", URL is: " + docUrl)
@@ -63,17 +72,18 @@ async function Start() {
     // document.body.nodeType = nodeType
     // const domNode = document.body
     // const root = createRoot(domNode)
-    // root.render(<>
+    // const e = <div>
     //     <h1>
     //         Via.js - using DOM in worker
     //     </h1>
     //     <p>
     //         This page's contents and logic, including this text, was created by a Web Worker using APIs almost identical to the usual DOM APIs. In this case the controller is the worker, and the receiver is the DOM. To demonstrate the flexibility of the approach, the button below uses the Web Audio API to load and play a sound effect when clicked. The entire process, from creating the button, attaching an event handler, running the callback, creating an AudioContext, decoding the audio, creating audio buffers and nodes, and starting playback of the sound, is controlled entirely by the worker.
     //     </p>
-    //     <botton style={{ fontWeight: 'bold' }} onclick={OnClick}>
+    //     <button style={{ "font-weight": 'bold' }} onClick={OnClick}>
     //         Click me
-    //     </botton>
-    // </>)
+    //     </button>
+    // </div>
+    // render(() => e, domNode)
 
     via.audioContext = new via.AudioContext()
 

@@ -1,0 +1,139 @@
+{
+    "workbench.sideBar.location": "right",
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "javascript.format.semicolons": "remove",
+    "typescript.format.semicolons": "remove",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.arrowParens": "avoid",
+    "prettier.jsxBracketSameLine": true,
+    "prettier.jsxSingleQuote": true,
+    "prettier.trailingComma": "all",
+    "javascript.preferences.useAliasesForRenames": false,
+    "typescript.preferences.useAliasesForRenames": false,
+    "prettier.semi": false,
+    "prettier.singleQuote": true,
+    "html.format.wrapAttributes": "aligned-multiple",
+    "prettier.printWidth": 200,
+    "prettier.bracketSpacing": false,
+    "prettier.proseWrap": "never",
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "MikeBovenlander.formate"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "MikeBovenlander.formate"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "liveSassCompile.settings.watchOnLaunch": true,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "[xml]": {
+        "editor.defaultFormatter": "DotJoshJohnson.xml"
+    },
+    "[csharp]": {
+        "editor.defaultFormatter": "ms-dotnettools.csharp"
+    },
+    "files.associations": {
+        "*.json": "jsonc"
+    },
+    "omnisharp.organizeImportsOnFormat": true,
+    "terminal.integrated.scrollback": 1000000,
+    "terminal.integrated.profiles.windows": {
+        "watch": {
+            "path": [
+                "PowerShell"
+            ],
+            "icon": "debug-start",
+            "color": "terminal.ansiGreen",
+            "args": [
+                "-NoExit",
+                "yarn watch"
+            ]
+        },
+        "test": {
+            "path": [
+                "PowerShell"
+            ],
+            "icon": "beaker",
+            "color": "terminal.ansiMagenta",
+            "args": [
+                "-NoExit",
+                "yarn serve"
+            ]
+        },
+        "build": {
+            "path": [
+                "PowerShell"
+            ],
+            "icon": "sync",
+            "color": "terminal.ansiBlue",
+            "args": [
+                "-NoExit"
+            ]
+        }
+    },
+    "restoreTerminals.runOnStartup": true,
+    "restoreTerminals.keepExistingTerminalsOpen": false,
+    "restoreTerminals.terminals": [
+        {
+            "profile": "start",
+            "splitTerminals": [
+                {
+                    "name": "start",
+                    "commands": [
+                        "yarn start"
+                    ]
+                }
+            ]
+        },
+        {
+            "profile": "build",
+            "splitTerminals": [
+                {
+                    "name": "build",
+                    "commands": [
+                        "yarn build"
+                    ],
+                    "shouldRunCommands": false
+                }
+            ]
+        },
+        {
+            "profile": "test",
+            "splitTerminals": [
+                {
+                    "name": "test",
+                    "commands": [
+                        "jest --watch"
+                    ]
+                }
+            ]
+        }
+    ],
+    "vsnotes.defaultNotePath": "C:\\Users\\Wong\\Desktop\\Home\\notes",
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "scss.lint.emptyRules": "ignore",
+    "editor.inlineSuggest.enabled": true,
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+    "editor.detectIndentation": false,
+    "editor.accessibilitySupport": "off",
+    "git.openRepositoryInParentFolders": "never"
+}
