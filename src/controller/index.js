@@ -1,29 +1,26 @@
-/******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
-/******/ 	// The require scope
-/******/ 	var __webpack_require__ = {};
-/******/ 	
-/************************************************************************/
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/************************************************************************/
-var __webpack_exports__ = {};
-/*!*************************************!*\
-  !*** ./src/via/controller/index.ts ***!
-  \*************************************/
-__webpack_require__.r(__webpack_exports__);
 // export * from './object'
 // export * from './property'
 // export * from './controller'
+// declare class FinalizationRegistry {
+//     constructor(id: (id: any) => void)
+//     readonly [Symbol.toStringTag]: "FinalizationRegistry"
+//     /**
+//      * Registers an object with the registry.
+//      * @param target The target object to register.
+//      * @param heldValue The value to pass to the finalizer for this object. This cannot be the
+//      * target object.
+//      * @param unregisterToken The token to pass to the unregister method to unregister the target
+//      * object. If provided (and not undefined), this must be an object. If not provided, the target
+//      * cannot be unregistered.
+//      */
+//     register(target: object, heldValue: any, unregisterToken?: object): void
+//     /**
+//      * Unregisters an object from the registry.
+//      * @param unregisterToken The token that was used as the unregisterToken argument when calling
+//      * register to register the target object.
+//      */
+//     unregister(unregisterToken: object): void
+// }
 const Via = (!self.Via) ? self.Via = {} : self.Via;
 const ViaObjectHandler = {
     get(target, property, receiver) {
@@ -297,7 +294,4 @@ Via._MakeProperty = function (objectId, path) {
     func._nextCache = new Map(); // for recycling sub-property lookups
     return new Proxy(func, ViaPropertyHandler);
 };
-
-
-/******/ })()
-;
+export {};

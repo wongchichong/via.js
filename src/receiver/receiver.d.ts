@@ -1,0 +1,2 @@
+export {};
+import '../controller/index';

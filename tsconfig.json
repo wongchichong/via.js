@@ -7,21 +7,41 @@
         "target": "ES2021", //"es6",
         "allowJs": true,
         "moduleResolution": "node",
-        "jsx": "react",
-        // "jsxImportSource": "solid-js",
+        "jsx": "react-jsx",
+        "jsxImportSource": "voby",
         "skipLibCheck": true,
         "esModuleInterop": true,
         "strict": true,
         "forceConsistentCasingInFileNames": true,
         "resolveJsonModule": true,
         // "isolatedModules": true,
+        "outDir": "dist",
+        "declaration": true,
+        "rootDir": "./src",
         "typeRoots": [
             "./node_modules/@types",
             // "./node_modules/babel-plugin-jsx-dom-expressions",
             "./types"
         ],
+        "types": [
+            // "voby"
+        ],
+        // "paths": {
+        //     "voby/*": [
+        //         "../voby/*"
+        //     ],
+        //     "voby": [
+        //         "../voby"
+        //     ],
+        //     "voby/jsx-runtime": [
+        //         "../voby/dist/jsx"
+        //     ],
+        //     "voby/jsx-runtime/*": [
+        //         "../voby/dist/jsx/*"
+        //     ],
+        // }
     },
-    "files": [
-        "src/index.ts"
-    ]
+    "include": [
+        "src"
+    ],
 }

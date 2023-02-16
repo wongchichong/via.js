@@ -32,31 +32,36 @@ declare global {
         get<T>(proxy: any): Promise<T>
         via: ViaType & Window & typeof globalThis
     }
-}
 
-declare class FinalizationRegistry {
-    constructor(id: (id: any) => void)
-    readonly [Symbol.toStringTag]: "FinalizationRegistry"
-
-    /**
-     * Registers an object with the registry.
-     * @param target The target object to register.
-     * @param heldValue The value to pass to the finalizer for this object. This cannot be the
-     * target object.
-     * @param unregisterToken The token to pass to the unregister method to unregister the target
-     * object. If provided (and not undefined), this must be an object. If not provided, the target
-     * cannot be unregistered.
-     */
-    register(target: object, heldValue: any, unregisterToken?: object): void
-
-    /**
-     * Unregisters an object from the registry.
-     * @param unregisterToken The token that was used as the unregisterToken argument when calling
-     * register to register the target object.
-     */
-    unregister(unregisterToken: object): void
+    const Via: ViaType & Window & typeof globalThis
+    function get<T>(proxy: any): Promise<T>
+    const via: ViaType & Window & typeof globalThis
 
 }
+
+// declare class FinalizationRegistry {
+//     constructor(id: (id: any) => void)
+//     readonly [Symbol.toStringTag]: "FinalizationRegistry"
+
+//     /**
+//      * Registers an object with the registry.
+//      * @param target The target object to register.
+//      * @param heldValue The value to pass to the finalizer for this object. This cannot be the
+//      * target object.
+//      * @param unregisterToken The token to pass to the unregister method to unregister the target
+//      * object. If provided (and not undefined), this must be an object. If not provided, the target
+//      * cannot be unregistered.
+//      */
+//     register(target: object, heldValue: any, unregisterToken?: object): void
+
+//     /**
+//      * Unregisters an object from the registry.
+//      * @param unregisterToken The token that was used as the unregisterToken argument when calling
+//      * register to register the target object.
+//      */
+//     unregister(unregisterToken: object): void
+
+// }
 
 const Via: ViaType = (!self.Via) ? self.Via = {} as ViaType & Window & typeof globalThis : self.Via
 
@@ -266,7 +271,7 @@ function CanStructuredClone(o: any) {
 
 // Wrap an argument to a small array representing the value, object, property or callback for
 // posting to the receiver.
-Via._WrapArg = function (arg) {
+Via._WrapArg = function (arg, i, a) {
     // The Proxy objects used for objects and properties identify as functions.
     // Use the special accessor symbols to see what they really are. If they're not a Proxy
     // that Via knows about, assume it is a callback function instead.

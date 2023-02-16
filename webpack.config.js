@@ -54,6 +54,19 @@ const config = {
                 loader: 'ts-loader',
                 exclude: ['/node_modules/'],
             },
+            // {
+            //     test: /\.(ts)x?$/,
+            //     exclude: /node_modules/,
+            //     use: {
+            //         loader: 'babel-loader',
+            //         options: {
+            //             babelrc: false,
+            //             configFile: false,
+            //             presets: ['@babel/preset-env', 'solid', '@babel/preset-typescript'],
+            //             plugins: ['@babel/plugin-syntax-dynamic-import', '@babel/plugin-proposal-class-properties', '@babel/plugin-proposal-object-rest-spread'],
+            //         }
+            //     }
+            // },
             {
                 test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
                 type: 'asset',
@@ -65,6 +78,10 @@ const config = {
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.jsx', '.js', '...'],
+        alias: {
+            "voby": path.resolve("../voby/src"),
+            "voby/jsx-runtime": path.resolve("../voby/src/jsx"),
+        }
     },
 }
 
