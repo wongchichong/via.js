@@ -11,6 +11,8 @@
     "version": "1.0.0",
     "description": "via.js",
     "name": "via",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
     "exports": {
         ".": {
             "import": "./dist/index.js",
@@ -32,6 +34,7 @@
         "serve": "webpack serve"
     },
     "dependencies": {
+        "oby": "workspace:*",
         "voby": "workspace:*"
     }
 }
