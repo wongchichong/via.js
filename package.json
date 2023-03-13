@@ -25,7 +25,7 @@
         "serve": "webpack serve"
     },
     "dependencies": {
-        "oby": "workspace:*"
+        "oby": "workspace:../oby"
     },
     "devDependencies": {
         "typescript": "^4.9.5"
