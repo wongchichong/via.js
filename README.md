@@ -84,7 +84,7 @@ Via.js needs you to set up a messaging bridge. In theory you could do something 
 
 ```js
 Via.postMessage = (data => self.postMessage(data));
-self.addEventListener("message", e => Via.OnMessage(e.data));
+self.addEventListener("message", e => Via.onMessage(e.data));
 ```
 
 And the receiver (DOM) side does this along the lines of:

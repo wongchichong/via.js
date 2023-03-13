@@ -1,4 +1,4 @@
-export function debugMethods(obj, excludes) {
+export function debugMethods(obj, excludes: (string | symbol)[]) {
     return new Proxy(obj, {
         get: function (target, name, receiver) {
             if (typeof target[name] === 'function' && !excludes.includes(name)) {
