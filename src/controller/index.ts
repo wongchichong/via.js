@@ -1,4 +1,4 @@
-import { SYMBOL_IS_VALUE } from "oby"
+// import { SYMBOL_IS_VALUE } from "oby"
 import { ArgEnum, CallbackArgType, CallType, CmdType, ConstructorType, ObjectArgType, ObjectPropertyArgType, PrimitiveArgType, SetType } from "../utils/types"
 
 export { }
@@ -332,7 +332,7 @@ export class ViaClass {
         // So use a function object as the target, and stash the object ID on it.
         const func = function () { }
         func[__ObjectSymbol] = id //._objectId = id
-        func[SYMBOL_IS_VALUE] = true
+        // func[SYMBOL_IS_VALUE] = true
 
         const ret = new Proxy(func, this.viaObjectHandler() as any)
 
@@ -428,7 +428,7 @@ export class ViaClass {
         // the property path on it.
         const func = function () { }
         func[__ObjectSymbol] = objectId //._objectId = objectId
-        func[SYMBOL_IS_VALUE] = true
+        // func[SYMBOL_IS_VALUE] = true
         func._path = path
         func._nextCache = new Map()		// for recycling sub-property lookups
         return new Proxy(func, this.ViaPropertyHandler() as any)
