@@ -18,6 +18,19 @@
             "types": "./dist/receiver/index.d.ts"
         }
     },
+    "//typesVersions": {
+        "*": {
+            ".": [
+                "./dist/index.d.ts"
+            ],
+            "./controller": [
+                "./dist/controller/index.d.ts"
+            ],
+            "./receiver": [
+                "./dist/receiver/index.d.ts"
+            ]
+        }
+    },
     "scripts": {
         "preinstall": "npx only-allow pnpm",
         "build": "tsc",

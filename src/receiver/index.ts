@@ -207,7 +207,7 @@ class ViaReceiverClass {
             }
         }
         else {
-            const ret = base[methodName](...args.map(a => a instanceof HTMLCollection ? [].slice.call(a) : a).flat())
+            const ret = base[methodName](...args.map(a => Array.isArray(a) ? [].slice.call(a) : a).flat())
             this.idMap.set(returnObjectId, ret)
         }
     }
