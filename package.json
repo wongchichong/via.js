@@ -19,6 +19,7 @@
         }
     },
     "scripts": {
+        "release": "git add . && git commit -m \"Bump version\" git push && pnpm version patch",
         "preinstall": "npx only-allow pnpm",
         "build": "tsc",
         "watch": "tsc --watch",
@@ -28,6 +29,7 @@
         "oby": "workspace:../oby"
     },
     "devDependencies": {
-        "typescript": "^4.9.5"
+        "typescript": "^5.0.4",
+        "vite-plugin-clean": "^1.0.0"
     }
 }
