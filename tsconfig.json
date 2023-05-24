@@ -20,28 +20,13 @@
         "rootDir": "./src",
         "typeRoots": [
             "./node_modules/@types",
-            // "./node_modules/babel-plugin-jsx-dom-expressions",
             "./types"
         ],
-        "types": [
-            // "voby"
-        ],
-        // "paths": {
-        //     "voby/*": [
-        //         "../voby/*"
-        //     ],
-        //     "voby": [
-        //         "../voby"
-        //     ],
-        //     "voby/jsx-runtime": [
-        //         "../voby/dist/jsx"
-        //     ],
-        //     "voby/jsx-runtime/*": [
-        //         "../voby/dist/jsx/*"
-        //     ],
-        // }
     },
     "include": [
         "src"
     ],
+    "exclude": [
+        "dist"
+    ]
 }

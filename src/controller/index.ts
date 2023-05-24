@@ -1,4 +1,3 @@
-// import { SYMBOL_IS_VALUE } from "oby"
 import { ArgEnum, CallbackArgType, CallType, CmdType, ConstructorType, ObjectArgType, ObjectPropertyArgType, PrimitiveArgType, SetType } from "../utils/types"
 
 export { }
@@ -43,12 +42,14 @@ declare global {
 export const __TargetSymbol = Symbol("TARGET")
 export const __ObjectSymbol = Symbol("ID")
 export const __ArgsSymbol = Symbol("ARGS")
+export const __IsViaSymbol = Symbol('IsVia')
 
 /** example
  *  [SYMBOL_$]: SYMBOL_$ * 
  */
 export const IgnoreSymbols = {
-    [__ArgsSymbol]: __ArgsSymbol
+    [__ArgsSymbol]: __ArgsSymbol,
+    [__IsViaSymbol]: __IsViaSymbol
 }
 
 
@@ -332,7 +333,7 @@ export class ViaClass {
         // So use a function object as the target, and stash the object ID on it.
         const func = function () { }
         func[__ObjectSymbol] = id //._objectId = id
-        // func[SYMBOL_IS_VALUE] = true
+        func[__IsViaSymbol] = true
 
         const ret = new Proxy(func, this.viaObjectHandler() as any)
 
@@ -428,7 +429,7 @@ export class ViaClass {
         // the property path on it.
         const func = function () { }
         func[__ObjectSymbol] = objectId //._objectId = objectId
-        // func[SYMBOL_IS_VALUE] = true
+        func[__IsViaSymbol] = true
         func._path = path
         func._nextCache = new Map()		// for recycling sub-property lookups
         return new Proxy(func, this.ViaPropertyHandler() as any)
@@ -446,7 +447,7 @@ self.get = self.Via.get.bind(self.Via)
 
 
 const isProxy = (proxy: any): proxy is typeof Proxy => {
-    return proxy == null ? false : !!proxy[Symbol.for("__isProxy")]
+    return proxy == null ? false : !!proxy[__IsViaSymbol] //!!proxy[Symbol.for("__isProxy")]
 }
 
 function CanStructuredClone<T>(o: T): o is T {
