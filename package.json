@@ -1,7 +1,7 @@
 {
     "version": "1.0.0",
     "description": "via.js",
-    "name": "via",
+    "name": "via.js",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
     "exports": {
@@ -39,13 +39,12 @@
         "serve": "webpack serve"
     },
     "dependencies": {
-        "pnpm": "^8.3.1"
+        "pnpm": "^8.8.0"
     },
     "devDependencies": {
-        "typescript": "^5.0.4",
-        "vite": "^4.3.3",
+        "typescript": "^5.2.2",
+        "vite": "^4.4.11",
         "vite-plugin-clean": "^1.0.0",
         "vite-plugin-dts": "^2.3.0"
-    },
-    "peerDependencies": {}
+    }
 }

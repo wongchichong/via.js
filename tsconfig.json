@@ -8,7 +8,7 @@
         "allowJs": true,
         "moduleResolution": "node",
         "jsx": "react-jsx",
-        "jsxImportSource": "voby",
+        "jsxImportSource": "woby",
         "skipLibCheck": true,
         "esModuleInterop": true,
         "strict": true,
