@@ -32,7 +32,7 @@
         }
     },
     "scripts": {
-        "release": "git add . && git commit -m \"Bump version\" git push && pnpm version patch",
+        "release": "git add . && git commit -m \"Bump version\" && git push && pnpm version patch",
         "preinstall": "npx only-allow pnpm",
         "build": "tsc",
         "watch": "tsc --watch",
@@ -42,9 +42,8 @@
         "pnpm": "^8.8.0"
     },
     "devDependencies": {
-        "typescript": "^5.2.2",
-        "vite": "^4.4.11",
-        "vite-plugin-clean": "^1.0.0",
-        "vite-plugin-dts": "^2.3.0"
+        "typescript": "^5.4.4",
+        "vite": "^5.2.8",
+        "vite-plugin-clean": "^1.0.0"
     }
 }
