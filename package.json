@@ -39,11 +39,11 @@
         "serve": "webpack serve"
     },
     "dependencies": {
-        "pnpm": "^8.8.0"
+        "pnpm": "^9.1.1"
     },
     "devDependencies": {
-        "typescript": "^5.4.4",
-        "vite": "^5.2.8",
+        "typescript": "^5.4.5",
+        "vite": "^5.2.11",
         "vite-plugin-clean": "^1.0.0"
     }
 }
