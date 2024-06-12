@@ -32,14 +32,18 @@
         }
     },
     "scripts": {
-        "release": "git add . && git commit -m \"Bump version\" && git push && pnpm version patch && pnpm publish",
+        "git": "git add . && git commit -m \"Bump version\" && git push",
+        "bump": "pnpm version patch",
+        "npmjs": "pnpm publish",
+        "release": "run-s -c git bump npmjs",
+        "declaration": "tsc --declaration --emitDeclarationOnly --declarationMap",
+        "declaration:watch": "tsc --declaration --emitDeclarationOnly  --declarationMap--watch",
         "preinstall": "npx only-allow pnpm",
         "build": "tsc",
         "watch": "tsc --watch",
         "serve": "webpack serve"
     },
     "dependencies": {
-        "pnpm": "^9.1.1"
     },
     "devDependencies": {
         "typescript": "^5.4.5",
